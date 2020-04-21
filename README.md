@@ -4,10 +4,10 @@
 https://punkapi.com/documentation/v2
 
 
-## Problem statement(which problem I am trying to solve)
+## Problem statement
 You go into a liquor store or you are hanging with your friends at a restaurant. Someone asks the questions, "Hey, I wonder what this beer is made out of?" Being the beer connoisseur you are, you quickly do a search for the beer name and WHAAALA!; You now have the info to the beers ABV, type of yeast used and even what food pairs well with the beer.
 
-## Target users(who are the ppl whose problem Im trying to solve)
+## Target users
 The target users are people that are enthusiatic about beer and want to learn more
 
 ## Wireframe
