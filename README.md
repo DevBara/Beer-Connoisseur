@@ -21,6 +21,8 @@ The target users are people that are enthusiatic about beer and want to learn mo
 
 ### Beer Info Container that renders API data based on user search
 
+### Possibly Filter component that allows users to filter data by API parameters
+
 ### Footer that allows users to sign up for a newsletter based off type of beers
 
 ### Form for newsletter sign up
