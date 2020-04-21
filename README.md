@@ -1,16 +1,17 @@
 # Module2-Project-Bara
 
 # 3rd Party API I am using
-https://www.openbrewerydb.org/documentation
+https://punkapi.com/documentation/v2
 
 
 ## Problem statement(which problem I am trying to solve)
-The problem is there are individuals who only drink local, craft beers. These craft beers are unique and not found in stores. Depending on the state, some craft beers can only be bought from the brewery itself.
+You go into a liquor store or you are hanging with your friends at a restaurant. Someone asks the questions, "Hey, I wonder what this beer is made out of?" Being the beer connoisseur you are, you quickly do a search for the beer name and WHAAALA!; You now have the info to the beers ABV, type of yeast used and even what food pairs well with the beer.
 
 ## Target users(who are the ppl whose problem Im trying to solve)
-The target users are people who drink local, craft beers
+The target users are people that are enthusiatic about beer and want to learn more
 
 ## Wireframe
+
 
 2 Stateful components 5 functional components (presentational components)
 
@@ -21,4 +22,6 @@ The target users are people who drink local, craft beers
 ### Beer Info Container that renders API data based on user search
 
 ### Footer that allows users to sign up for a newsletter based off type of beers
+
+### Form for newsletter sign up
 
