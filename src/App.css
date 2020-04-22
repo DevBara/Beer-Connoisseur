@@ -34,3 +34,17 @@ nav{
   margin: 0px;
 }
 /* End Title and subtitle */
+
+/* Home image parent */
+.beerImage{
+  display: flex;
+  flex-direction: row;
+  margin-bottom:10px;
+}
+.beer{
+  height: 450px;
+  width: auto;
+}
+
+/* End Home image parent */
+
