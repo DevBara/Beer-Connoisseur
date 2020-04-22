@@ -24,7 +24,7 @@ export default class Home extends Component {
                        to your friends or show 
                    </h3>
                    <p>Are you ready to locate the perfect beer?</p>
-                   <NavLink to="/beerlocator">Search Beers</NavLink>
+                   <NavLink className="button" to="/beerlocator">Search Beers</NavLink>
                </div>
                 
             </div>
