@@ -50,7 +50,6 @@ export default class BeerLocator extends Component {
            
     }
 
-
     render() {
         
         return (
