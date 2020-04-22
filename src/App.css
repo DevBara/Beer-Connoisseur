@@ -1,12 +1,34 @@
-.App {
+body{
   text-align: center;
+  background-color: orange;
 }
 
 img{
   height: 250px;
   width: auto;
 }
-
+/* NavBar */
 li{
   list-style-type: none;
+  display: inline-block;
+  margin: 10px;
+  text-align: center;
+}
+
+nav{
+  background-color: black;
+}
+
+.nav{
+  color: white;
+  
+}
+/* End NavBar */
+
+.title{
+  margin: 0px;
+}
+
+.subtitle{
+  margin: 0px;
 }
