@@ -1,6 +1,11 @@
+.siteContainer{
+  display: inline-flex;
+}
+
 body{
   text-align: center;
   background-color: orange;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 img{
@@ -36,15 +41,24 @@ nav{
 /* End Title and subtitle */
 
 /* Home image parent */
-.beerImage{
+.homeParent{
   display: flex;
   flex-direction: row;
-  margin-bottom:10px;
+  justify-content: space-around;
+}
+.beerImage{
+  padding: 3px;
 }
 .beer{
-  height: 450px;
+  height: 650px;
   width: auto;
+  margin: 3px;
 }
-
 /* End Home image parent */
+
+.mainDescription{
+  align-self: center;
+  height: auto;
+  width: 950px;
+}
 
