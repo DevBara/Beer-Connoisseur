@@ -1,20 +1,43 @@
 import React, { Component } from 'react'
+import {BrowserRouter, Route, Switch, Link, Router} from 'react-router-dom'
+import Home from './Home'
+import BeerLocator from './BeerLocator'
+import HowTo from './HowTo'
 
 export default class NavBar extends Component {
     render() {
         return (
-            <div>
-                <div>
-                    <NavBar>
-                        <ul>
-                            <li>Home</li>
-                        </ul>
-                        
-                    </NavBar>
-                </div>
-                <h1>Nav Bar</h1>
-                
-            </div>
+           <Router>
+              <div>
+                <nav>
+                    <ul>
+                        <li>
+                            <Link to ="/"> Home</Link>
+                        </li>
+                        <li>
+                            <Link to ="/BeerLocator">Beer Finder</Link>
+                        </li>
+                        <li>
+                            <Link to ="/HowTo">How To</Link>
+                        </li>
+                    </ul>
+                </nav>
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+              </div>   
+           </Router>
         )
     }
 }
