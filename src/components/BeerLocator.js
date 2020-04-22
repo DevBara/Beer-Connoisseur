@@ -55,8 +55,9 @@ export default class BeerLocator extends Component {
         return (
             <div>
                 <div>
-                    {this.state.beersHTML}
+                    {/* {this.state.beersHTML} */}
                 </div>
+                <h1>Beer Finder</h1>
 
             </div>
         )
