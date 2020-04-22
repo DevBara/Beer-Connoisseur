@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import Beer from '../images/beers.jpg'
+import Beers from '../images/Beers.jpeg'
+import Sleekbeer from '../images/Sleekbeer.jpg'
 
 export default class Home extends Component {
     render() {
         return (
             <div>
                <div className="beerImage">
-                    <img src={Beer} alt='beer cup'></img>
+                    <img className='beer' src={Sleekbeer} alt='beer cup'></img>
                </div>
                 
             </div>
