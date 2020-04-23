@@ -1,10 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import SearchBeer from './SearchBeer'
 
-let beerPreferencse = {
-
-}
 export default class BeerLocator extends Component {
     constructor(props){
         super(props);
@@ -57,9 +53,18 @@ export default class BeerLocator extends Component {
             }   catch (error){
                 console.error(error);
             }
-
-           
     }
+
+//To allow search option to work. Need to create an event
+//On search click
+//Change state >>>this.setState
+handleSearch = (e) => {
+    this.setState({
+        search: e.target.value
+    });
+
+}
+
     render() {
         return (
             <div className="beerParent">
