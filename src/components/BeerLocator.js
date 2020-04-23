@@ -29,10 +29,6 @@ export default class BeerLocator extends Component {
         this.callApi();
     }
 
-    //Create a function that connects search function with APi data
-    //function searchBeer   
-        //
-
 //get api requests using async
 
     async callApi(){
@@ -42,7 +38,7 @@ export default class BeerLocator extends Component {
 //Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
-                    <img src={beer["image_url"]} height="150px" width="100%" />
+                    <img className= "dataImg" src={beer["image_url"]} alt="pictures of beer"/>
                     <h4>Beer Name: {beer["name"]}</h4>
                     {/* <h5>First Brewed: ({["first_brewed"]}</h5> */}
                     <h5>Tagline: {beer["tagline"]}</h5>
@@ -65,24 +61,14 @@ export default class BeerLocator extends Component {
 //On search click
 //Change state >>>this.setState
 // this.state search changes on event
-
-//Implementing function on button, stopped allowing text to be inputted
-
-onChange = (e) => {
-    this.setState({
-        search: e.target.data.name
-    });
-
-}
-
     render() {
 
         return (
             <div className="beerParent">
                 <div className="searchContainer">
 {/* Need a bar and submit button for user to search through data */}
-                    <input className="searchBox" type="text" placeholder="Search Here" value={this.state.search} ></input>
-                    <button onClick={this.onChange}>Search</button>
+                    <input className="searchBox" type="text" placeholder="Search Here"></input>
+                   
                 </div>
            
                 <div className="beerChild">
