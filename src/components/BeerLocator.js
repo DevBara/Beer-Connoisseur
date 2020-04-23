@@ -17,8 +17,14 @@ export default class BeerLocator extends Component {
             search: ''
         }
         //if any bindings put in this area
+
+
+        this.searchBeer()
     }
 
+    searchBeer(){
+        console.log('I am the search parameter')
+    }
     componentDidMount(){
         this.callApi();
     }
