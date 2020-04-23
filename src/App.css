@@ -31,15 +31,26 @@ nav{
 }
 /* End NavBar */
 
-/* TItle and subtitle */
+/* Header Stylinh */
+.titleParent{
+  height: auto;
+  padding: 1em;
+}
 .title{
-  margin: 0px;
+  margin: 10px;
+  
 }
 
 .subtitle{
   margin: 0px;
+  padding: 0px;
 }
-/* End Title and subtitle */
+
+.logo{
+  height:100px;
+  float: left;
+}
+/* End Header Styling */
 
 /* Home page styling */
 .homeParent{
