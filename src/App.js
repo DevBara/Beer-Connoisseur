@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import BeerLocator from './components/BeerLocator'
 import Home from './components/Home'
 import HowTo from './components/HowTo'
-import Title from './components/Title'
+import Header from './components/Header'
 import Footer from './components/Footer'
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   <div className='siteContainer'>
     <Router>
         <div>
-          <Title />
+          <Header />
           <nav>
             <ul>
               <li>
