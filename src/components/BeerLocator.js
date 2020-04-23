@@ -58,10 +58,13 @@ export default class BeerLocator extends Component {
 //To allow search option to work. Need to create an event
 //On search click
 //Change state >>>this.setState
-// state search changes on even
+// this.state search changes on event
+
+//Implementing function on button, stopped allowing text to be inputted
+
 onChange = (e) => {
     this.setState({
-        search: e.target.data
+        search: e.target.data.name
     });
 
 }
@@ -73,7 +76,7 @@ onChange = (e) => {
                 <div className="searchContainer">
 {/* Need a bar and submit button for user to search through data */}
                     <input className="searchBox" type="text" placeholder="Search Here" value={this.state.search} ></input>
-                    <button type="submit" onClick={this.onChange}>Search</button>
+                    <button onClick={this.onChange}>Search</button>
                 </div>
            
                 <div className="beerChild">
