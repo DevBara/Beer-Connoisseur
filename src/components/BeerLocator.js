@@ -23,11 +23,12 @@ export default class BeerLocator extends Component {
         this.callApi();
     }
 
+//get api requests
 
     async callApi(){
         try {
             const response = await axios.get('https://api.punkapi.com/v2/beers');
-
+//How Data should be rendered
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
                     <img src={beer["image_url"]} height="150px" width="100%" />
@@ -38,10 +39,12 @@ export default class BeerLocator extends Component {
                     <h3>Alcohol content: {beer["abv"]}%</h3>
                     <p>Description{beer["description"]}</p>
                 </div>);
+//Change state once data is received 
                 this.setState({
                     beers:response.data,
                     beersHTML: beerList
                 })
+//Catch any errors 
             }   catch (error){
                 console.error(error);
             }
@@ -49,13 +52,11 @@ export default class BeerLocator extends Component {
            
     }
     render() {
-        
         return (
             <div className="beerParent">
                 <div className="beerChild">
                     {this.state.beersHTML}
                 </div>
-                
 
             </div>
         )
