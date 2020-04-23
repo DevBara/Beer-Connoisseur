@@ -61,12 +61,13 @@ export default class BeerLocator extends Component {
 // state search changes on even
 onChange = (e) => {
     this.setState({
-        search: e.target.value
+        search: e.target.data
     });
 
 }
 
     render() {
+
         return (
             <div className="beerParent">
                 <div className="searchContainer">
@@ -78,7 +79,7 @@ onChange = (e) => {
                 <div className="beerChild">
                     {this.state.beersList}
                 </div>
-
+            
             </div>
         )
     }
