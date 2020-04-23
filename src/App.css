@@ -89,12 +89,19 @@ nav{
 /* Footer Styling */
 
 .footerParent{
+  text-align: center;
+  font-style: italic;
+  font-size: 1em;
+  padding: 5px;
+  height: 8em;
   background-color: black;
-  height: 350px;
-  width: auto;
-  padding: 0px;
 }
 
 .footer-titles{
   color: white;
+}
+
+
+.footer-child{
+  margin: 5px;
 }
