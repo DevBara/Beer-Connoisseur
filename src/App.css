@@ -70,3 +70,18 @@ nav{
 }
 
 /* End Home page styling */
+
+/* Beer Locator Styling */
+.beerParent{
+ border: 1px dotted blue;
+}
+
+.beerChild{
+  width: 100% auto;
+  height: 80% auto;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;  
+  text-align: center;
+}
+
+/* End Beer Locator Styling */
