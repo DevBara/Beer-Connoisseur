@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import SearchBeer from './SearchBeer'
 
+let beerPreferencse = {
 
+}
 export default class BeerLocator extends Component {
     constructor(props){
         super(props);
@@ -24,6 +26,10 @@ export default class BeerLocator extends Component {
     componentDidMount(){
         this.callApi();
     }
+
+    //Create a function that connects search function with APi data
+    //function searchBeer   
+        //
 
 //get api requests using async
 
@@ -58,7 +64,9 @@ export default class BeerLocator extends Component {
         return (
             <div className="beerParent">
                 <div className="searchContainer">
+{/* Need a bar and submit button for user to search through data */}
                     <input className="searchBox" type="text" placeholder="Search Here" value={this.state.search} ></input>
+                    <button type="submit">Search</button>
                 </div>
            
                 <div className="beerChild">
