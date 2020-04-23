@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
 export default class BeerLocator extends Component {
     constructor(props){
         super(props);
@@ -26,8 +27,6 @@ export default class BeerLocator extends Component {
     async callApi(){
         try {
             const response = await axios.get('https://api.punkapi.com/v2/beers');
-            console.log(response.data);
-            console.log(response);
 
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
@@ -49,12 +48,11 @@ export default class BeerLocator extends Component {
 
            
     }
-
     render() {
         
         return (
-            <div>
-                <div>
+            <div className="beerParent">
+                <div className="beerChild">
                     {this.state.beersHTML}
                 </div>
                 
