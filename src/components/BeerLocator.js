@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import SearchBeer from './SearchBeer'
 
 
 export default class BeerLocator extends Component {
@@ -8,13 +9,14 @@ export default class BeerLocator extends Component {
 
         this.state = {
             beers: '',
-            beersHTML: '',
+            beersList: '',
                 name:"",
                 tagline:"",
                 food_pairing:"",
                 description: "",
                 image_url: "",
-                first_brewed: ""
+                first_brewed: "",
+            search: ''
         }
         //if any bindings put in this area
     }
@@ -23,12 +25,13 @@ export default class BeerLocator extends Component {
         this.callApi();
     }
 
-//get api requests
+//get api requests using async
 
     async callApi(){
         try {
             const response = await axios.get('https://api.punkapi.com/v2/beers');
 //How Data should be rendered
+//Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
                     <img src={beer["image_url"]} height="150px" width="100%" />
@@ -42,7 +45,7 @@ export default class BeerLocator extends Component {
 //Change state once data is received 
                 this.setState({
                     beers:response.data,
-                    beersHTML: beerList
+                    beersList: beerList
                 })
 //Catch any errors 
             }   catch (error){
@@ -54,8 +57,9 @@ export default class BeerLocator extends Component {
     render() {
         return (
             <div className="beerParent">
+            {SearchBeer}
                 <div className="beerChild">
-                    {this.state.beersHTML}
+                    {this.state.beersList}
                 </div>
 
             </div>
