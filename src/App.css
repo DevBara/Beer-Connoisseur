@@ -73,7 +73,7 @@ nav{
 
 /* Beer Locator Styling */
 .beerParent{
- border: 1px dotted blue;
+ /* border: 1px dotted blue; */
 }
 
 .beerChild{
@@ -85,3 +85,16 @@ nav{
 }
 
 /* End Beer Locator Styling */
+
+/* Footer Styling */
+
+.footerParent{
+  background-color: black;
+  height: 350px;
+  width: auto;
+  padding: 0px;
+}
+
+.footer-titles{
+  color: white;
+}
