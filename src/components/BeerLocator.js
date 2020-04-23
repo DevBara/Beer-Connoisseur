@@ -57,7 +57,10 @@ export default class BeerLocator extends Component {
     render() {
         return (
             <div className="beerParent">
-            {SearchBeer}
+                <div className="searchContainer">
+                    <input className="searchBox" type="text" placeholder="Search Here" value={this.state.search} ></input>
+                </div>
+           
                 <div className="beerChild">
                     {this.state.beersList}
                 </div>
