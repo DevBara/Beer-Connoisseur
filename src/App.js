@@ -1,7 +1,11 @@
 import React from 'react'
 import './App.css';
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom'
-
+import BeerLocator from './components/BeerLocator'
+import Home from './components/Home'
+import HowTo from './components/HowTo'
+import Title from './components/Title'
+import Footer from './components/Footer'
 
 function App() {
   return (
@@ -29,6 +33,8 @@ function App() {
           </Switch>
         </div>   
      </Router>
+     <Footer />
+     
   </div>
    
   )
