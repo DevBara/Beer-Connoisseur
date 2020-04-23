@@ -105,3 +105,8 @@ nav{
 .footer-child{
   margin: 5px;
 }
+
+/* SearchBox Styling */
+.searchContainer{
+  margin:3em;
+}
