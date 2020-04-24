@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import $ from 'jquery'
 
 export default class BeerLocator extends Component {
     constructor(props){
@@ -18,13 +19,24 @@ export default class BeerLocator extends Component {
         }
         //if any bindings put in this area
 
-
         this.searchBeer()
+
     }
 
     searchBeer(){
-        console.log('I am the search parameter')
+        console.log("Perform search")
+        const apiUrl= 'https://api.punkapi.com/v2/beers'
+        $.ajax({
+            url: apiUrl,
+            success(searchResults)  {
+                console.log("search bar works")
+            },
+            error:(xhr,status,err) => {
+                console.error("search FAILED")
+            }
+        })
     }
+   
     componentDidMount(){
         this.callApi();
     }
@@ -38,7 +50,7 @@ export default class BeerLocator extends Component {
 //Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
-                    <img className= "dataImg" src={beer["image_url"]} alt="pictures of beer"/>
+                    <img className= "dataImg" src={beer["image_url"]} alt="picture"/>
                     <h4>Beer Name: {beer["name"]}</h4>
                     {/* <h5>First Brewed: ({["first_brewed"]}</h5> */}
                     <h5>Tagline: {beer["tagline"]}</h5>
@@ -61,20 +73,24 @@ export default class BeerLocator extends Component {
 //On search click
 //Change state >>>this.setState
 // this.state search changes on event
+
+
+
+
     render() {
 
         return (
             <div className="beerParent">
                 <div className="searchContainer">
 {/* Need a bar and submit button for user to search through data */}
-                    <input className="searchBox" type="text" placeholder="Search Here"></input>
-                   
+                    <input className="searchBox" type="text" placeholder="Search Here" ></input>
+                    {/* <button>Search</button> */}
                 </div>
            
                 <div className="beerChild">
                     {this.state.beersList}
                 </div>
-            
+          
             </div>
         )
     }
