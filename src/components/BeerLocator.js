@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import $ from 'jquery'
+import {search} from './utils'
 
 export default class BeerLocator extends Component {
     constructor(props){
@@ -15,41 +16,68 @@ export default class BeerLocator extends Component {
                 description: "",
                 image_url: "",
                 first_brewed: "",
-            search: ''
+            search: '',
+            loading: false
         }
         //if any bindings put in this area
-
-        this.searchBeer()
 
     }
 
 //Use jquery to create a search function attached to API link
 //Function works, challenge: connect it to search bar
 
-    searchBeer(){
-        const apiUrl= 'https://api.punkapi.com/v2/beers'
-        $.ajax({
-            url: apiUrl,
-            success(searchResults)  {
+    // searchBeer(){
+    //     const apiUrl= 'https://api.punkapi.com/v2/beers'
+    //     $.ajax({
+    //         url: apiUrl,
+    //         success(searchResults)  {
             
-                const results = searchResults
-                let beerRows =[]
+    //             const results = searchResults
+    //             let beerRows =[]
 
-                results.forEach((beer) =>{
-                    beerRows.push()
-                })
-            },
-            error:(status,err) => {
-                console.error("search FAILED")
-            }
-        })
-    } 
+    //             results.forEach((beer) =>{
+    //                 beerRows.push()
+    //             })
+    //         },
+    //         error:(status,err) => {
+    //             console.error("search FAILED")
+    //         }
+    //     })
+    // } 
    
     componentDidMount(){
         this.callApi();
     }
 
 //get api requests using async
+
+    search = async val => {
+        this.setState({loading: true});
+        const res = await search(
+            'https://api.punkapi.com/v2/beers'
+        );
+        const beers = await res;
+
+        this.setState({beers, loading: false});
+};
+
+    onChangeHandler = async e => {
+        this.search(e.target.value);
+        this.setState({value:e.target.value});
+    };
+
+    get renderBeers(){
+        let beers = <h1>Where are the Beers!?</h1>;
+        if(this.state.beers){
+            beers = <beers list={this.state.beers} />;
+        }
+    }
+
+
+
+
+
+
 
     async callApi(){
         try {
@@ -90,14 +118,17 @@ export default class BeerLocator extends Component {
         return (
             <div className="beerParent">
                 <div className="searchContainer">
-{/* Need a bar and submit button for user to search through data */}
-                    <input className="searchBox" type="text" placeholder="Search Here" />
-                    {/* <button>Search</button> */}
+                    <input className="searchBox" type="text" placeholder="Search Here" 
+                        value={this.state.value}
+                        onChange={e => this.onChangeHandler(e)}
+                    />
+
+                    {this.renderBeers}
                 </div>
            
-                <div className="beerChild">
+                {/* <div className="beerChild">
                     {this.state.beersList}
-                </div>
+                </div> */}
           
             </div>
         )
