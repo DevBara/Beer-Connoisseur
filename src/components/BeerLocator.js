@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import $ from 'jquery'
-import {search} from './utils'
+// import SearchBeer from './SearchBeer'
+
 
 export default class BeerLocator extends Component {
     constructor(props){
@@ -17,7 +18,7 @@ export default class BeerLocator extends Component {
                 image_url: "",
                 first_brewed: "",
             search: '',
-            loading: false
+            
         }
         //if any bindings put in this area
 
@@ -46,44 +47,19 @@ export default class BeerLocator extends Component {
     // } 
    
     componentDidMount(){
-        this.callApi();
-    }
-
-//get api requests using async
-
-    search = async val => {
-        this.setState({loading: true});
-        const res = await search(
-            'https://api.punkapi.com/v2/beers'
-        );
-        const beers = await res;
-
-        this.setState({beers, loading: false});
-};
-
-    onChangeHandler = async e => {
-        this.search(e.target.value);
-        this.setState({value:e.target.value});
-    };
-
-    get renderBeers(){
-        let beers = <h1>Where are the Beers!?</h1>;
-        if(this.state.beers){
-            beers = <beers list={this.state.beers} />;
-        }
+        this.getBeers()
+        // this.callApi();
+        // this.SearchBeer();
     }
 
 
 
-
-
-
-
-    async callApi(){
+    async getBeers(){
         try {
             const response = await axios.get('https://api.punkapi.com/v2/beers');
+            console.log(response)
 //How Data should be rendered
-//Let beerList = data then map that data as so
+// Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
                     <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
@@ -118,17 +94,15 @@ export default class BeerLocator extends Component {
         return (
             <div className="beerParent">
                 <div className="searchContainer">
-                    <input className="searchBox" type="text" placeholder="Search Here" 
+                    <input className="searchBox" 
+                        type="text" 
+                        placeholder="Search Here" 
                         value={this.state.value}
-                        onChange={e => this.onChangeHandler(e)}
                     />
-
-                    {this.renderBeers}
                 </div>
-           
-                {/* <div className="beerChild">
+                <div className="beerChild">
                     {this.state.beersList}
-                </div> */}
+                </div> 
           
             </div>
         )
