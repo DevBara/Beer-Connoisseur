@@ -18,10 +18,8 @@ export default class BeerLocator extends Component {
                 image_url: "",
                 first_brewed: "",
             search: '',
-            
         }
         //if any bindings put in this area
-
     }
 
 //Use jquery to create a search function attached to API link
@@ -48,11 +46,8 @@ export default class BeerLocator extends Component {
    
     componentDidMount(){
         this.getBeers()
-        // this.callApi();
         // this.SearchBeer();
     }
-
-
 
     async getBeers(){
         try {
@@ -68,7 +63,6 @@ export default class BeerLocator extends Component {
                     <h5>Tagline: {beer["tagline"]}</h5>
                     <h5>What foods go great with this beer: {beer["food_pairing"]}</h5>
                     <h5>Alcohol content: {beer["abv"]}%</h5>
-                    
                 </div>);
 //Change state once data is received 
                 this.setState({
@@ -86,13 +80,11 @@ export default class BeerLocator extends Component {
 //Change state >>>this.setState
 // this.state search changes on event
 
-
-
-
     render() {
 
         return (
             <div className="beerParent">
+
                 <div className="searchContainer">
                     <input className="searchBox" 
                         type="text" 
@@ -100,10 +92,10 @@ export default class BeerLocator extends Component {
                         value={this.state.value}
                     />
                 </div>
+
                 <div className="beerChild">
-                    {this.state.beersList}
+                    <ul>{this.state.beersList}</ul>
                 </div> 
-          
             </div>
         )
     }
