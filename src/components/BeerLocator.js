@@ -24,13 +24,20 @@ export default class BeerLocator extends Component {
     }
 
     searchBeer(){
+        console.log("Perform search")
         const apiUrl= 'https://api.punkapi.com/v2/beers'
         $.ajax({
             url: apiUrl,
             success(searchResults)  {
+                console.log("search bar works")
+                console.log(searchResults)
                 const results = searchResults
+                console.log(results[0])
+
                 let beerRows =[]
+
                 results.forEach((beer) =>{
+                    console.log(beer.name)
                     beerRows.push()
                 })
             },
@@ -54,12 +61,12 @@ export default class BeerLocator extends Component {
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
                     <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
-                    <h4>Beer Name: {beer["name"]}</h4>
-                    {/* <h5>First Brewed: ({["first_brewed"]}</h5> */}
+                    <h2>Name: {beer["name"]}</h2>
+                    <h4>Description: {beer["description"]}</h4>
                     <h5>Tagline: {beer["tagline"]}</h5>
                     <h5>What foods go great with this beer: {beer["food_pairing"]}</h5>
-                    <h3>Alcohol content: {beer["abv"]}%</h3>
-                    <p>Description{beer["description"]}</p>
+                    <h5>Alcohol content: {beer["abv"]}%</h5>
+                    
                 </div>);
 //Change state once data is received 
                 this.setState({
@@ -86,7 +93,7 @@ export default class BeerLocator extends Component {
             <div className="beerParent">
                 <div className="searchContainer">
 {/* Need a bar and submit button for user to search through data */}
-                    <input className="searchBox" type="text" placeholder="Search Here" ></input>
+                    <input className="searchBox" type="text" placeholder="Search Here" />
                     {/* <button>Search</button> */}
                 </div>
            
