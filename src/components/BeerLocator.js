@@ -23,21 +23,19 @@ export default class BeerLocator extends Component {
 
     }
 
+//Use jquery to create a search function attached to API link
+//Function works, challenge: connect it to search bar
+
     searchBeer(){
-        console.log("Perform search")
         const apiUrl= 'https://api.punkapi.com/v2/beers'
         $.ajax({
             url: apiUrl,
             success(searchResults)  {
-                console.log("search bar works")
-                console.log(searchResults)
+            
                 const results = searchResults
-                console.log(results[0])
-
                 let beerRows =[]
 
                 results.forEach((beer) =>{
-                    console.log(beer.name)
                     beerRows.push()
                 })
             },
