@@ -24,18 +24,21 @@ export default class BeerLocator extends Component {
     }
 
     searchBeer(){
-        console.log("Perform search")
         const apiUrl= 'https://api.punkapi.com/v2/beers'
         $.ajax({
             url: apiUrl,
             success(searchResults)  {
-                console.log("search bar works")
+                const results = searchResults
+                let beerRows =[]
+                results.forEach((beer) =>{
+                    beerRows.push()
+                })
             },
-            error:(xhr,status,err) => {
+            error:(status,err) => {
                 console.error("search FAILED")
             }
         })
-    }
+    } 
    
     componentDidMount(){
         this.callApi();
@@ -50,7 +53,7 @@ export default class BeerLocator extends Component {
 //Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
-                    <img className= "dataImg" src={beer["image_url"]} alt="picture"/>
+                    <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
                     <h4>Beer Name: {beer["name"]}</h4>
                     {/* <h5>First Brewed: ({["first_brewed"]}</h5> */}
                     <h5>Tagline: {beer["tagline"]}</h5>
