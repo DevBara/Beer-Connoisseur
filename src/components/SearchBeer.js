@@ -8,8 +8,23 @@ export default class SearchBeer extends Component {
         this.state={
             search:""
         }
+        
+        this.searchBeer()
 
+    }
 
+    searchBeer(){
+        console.log("Perform search")
+        const url= 'https://api.punkapi.com/v2/beers'
+        $.ajax({
+            url: url,
+            success(searchResults) {
+                console.log("search bar works")
+            },
+            error:(xhr,status,err) => {
+                console.error("search FAILED")
+            }
+        })
     }
 
 
