@@ -57,12 +57,18 @@ export default class BeerLocator extends Component {
 // Let beerList = data then map that data as so
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
-                    <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
-                    <h2>Name: {beer["name"]}</h2>
-                    <h4>Description: {beer["description"]}</h4>
-                    <h5>Tagline: {beer["tagline"]}</h5>
-                    <h5>What foods go great with this beer: {beer["food_pairing"]}</h5>
-                    <h5>Alcohol content: {beer["abv"]}%</h5>
+                    <ul>
+                        <li>
+                            <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
+                        </li>
+                        <li>
+                            <h2>Name: {beer["name"]}</h2>
+                        </li>
+                        <h4>Description: {beer["description"]}</h4>
+                        <h5>Tagline: {beer["tagline"]}</h5>
+                        <h5>What foods go great with this beer: {beer["food_pairing"]}</h5>
+                        <h5>Alcohol content: {beer["abv"]}%</h5>
+                    </ul>
                 </div>);
 //Change state once data is received 
                 this.setState({
@@ -92,9 +98,9 @@ export default class BeerLocator extends Component {
                         value={this.state.value}
                     />
                 </div>
-
+                
                 <div className="beerChild">
-                    <ul>{this.state.beersList}</ul>
+                    {this.state.beersList}
                 </div> 
             </div>
         )
