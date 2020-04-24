@@ -4,6 +4,7 @@ import $ from 'jquery'
 // import SearchBeer from './SearchBeer'
 
 
+
 export default class BeerLocator extends Component {
     constructor(props){
         super(props);
@@ -11,13 +12,13 @@ export default class BeerLocator extends Component {
         this.state = {
             beers: '',
             beersList: '',
-                name:"",
-                tagline:"",
-                food_pairing:"",
-                description: "",
-                image_url: "",
-                first_brewed: "",
-            search: '',
+            name:"",
+            tagline:"",
+            food_pairing:"",
+            description: "",
+            image_url: "",
+            first_brewed: "",
+            // search: '',
         }
         //if any bindings put in this area
     }
@@ -54,16 +55,12 @@ export default class BeerLocator extends Component {
             const response = await axios.get('https://api.punkapi.com/v2/beers');
             console.log(response)
 //How Data should be rendered
-// Let beerList = data then map that data as so
+// Let beerList = data then map that data as such
             let beerList = response.data.map(beer =>
                <div key={beer["id"]}>
                     <ul>
-                        <li>
-                            <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
-                        </li>
-                        <li>
-                            <h2>Name: {beer["name"]}</h2>
-                        </li>
+                        <img className= "dataImg" src={beer["image_url"]} alt="beer"/>
+                        <h2>Name: {beer["name"]}</h2>
                         <h4>Description: {beer["description"]}</h4>
                         <h5>Tagline: {beer["tagline"]}</h5>
                         <h5>What foods go great with this beer: {beer["food_pairing"]}</h5>
@@ -92,11 +89,8 @@ export default class BeerLocator extends Component {
             <div className="beerParent">
 
                 <div className="searchContainer">
-                    <input className="searchBox" 
-                        type="text" 
-                        placeholder="Search Here" 
-                        value={this.state.value}
-                    />
+                    <input className="searchBox"  type="text" placeholder="Search Here" value={this.state.value}/>
+                    <button type="submit">Get Beers</button>
                 </div>
                 
                 <div className="beerChild">
