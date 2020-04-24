@@ -27,4 +27,8 @@ The target users are people that are enthusiatic about beer and want to learn mo
 
 ### Form for newsletter sign up
 
-## mh
+
+## On Going Issues
+Attempts to create a search function were unsuccessful.
+In SearchBeer component, a searchBeer function was created in BeerLocator and ran as it should with console.log
+However, attaching it to the search button rendered errors. 
