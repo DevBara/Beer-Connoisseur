@@ -7,6 +7,7 @@ import HowTo from './components/HowTo'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+
 function App() {
   return (
   <div className='siteContainer'>
@@ -34,6 +35,7 @@ function App() {
         </div>   
      </Router>
      <Footer />
+    
      
   </div>
    
