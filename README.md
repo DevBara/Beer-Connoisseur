@@ -32,3 +32,5 @@ The target users are people that are enthusiatic about beer and want to learn mo
 Attempts to create a search function were unsuccessful.
 In SearchBeer component, a searchBeer function was created in BeerLocator and ran as it should with console.log
 However, attaching it to the search button rendered errors. 
+    -Used ajax to render search via SearchBeer.js, worked but with errors, data wouldn't refresh
+    -Used an actually function as a handler event( MANY errors, disregarded function)
